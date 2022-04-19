@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Layout Using Float</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background: #f1f1f1;
+            margin: 0;
+        }
+
+        /* Style main header */
+
+        .header {
+            padding: 30px 0;
+            background: #fff;
+        }
+
+        .header h1, .header p {
+            margin: 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+
+        /* Style top nav link */
+
+        .menu {
+            background: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu::after{
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .menu li {
+            float: left;
+            list-style: none;
+            border-right: 1px solid #eaeaea;
+        }
+
+        .menu li:last-child {
+            float: right;
+            border-left: 1px solid #eaeaea;
+        }
+
+        .menu li a {
+            display: block;
+            padding: 0.725rem 0.5rem;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .menu li a:hover {
+            background: #efefef;
+            color: #444;
+        }
+
+        /* Style Card */
+        .card {
+            background: #fff;
+            margin-top: 0.725rem;
+            padding: 20px;
+        }
+
+        .card .title {
+            text-transform: uppercase;
+        }
+
+        .card .info {
+            font-weight: bold;
+            font-size: 0.725rem;
+            letter-spacing: 1px;
+        }
+
+        .card .fake-img {
+            background: #666;
+            color: #fff;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            /* Re-style the main layout's two column when screen is larger than or equal to 768px */
+            .row {
+                width: 100%;
+            }
+
+            .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+            
+            .col-75 {
+                float: left;
+                width: 75%;
+                padding: 10px;
+            }
+
+            .col-25 {
+                float: left;
+                width: 25%;
+                padding: 10px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .row {
+                width: 80vw;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>My Website</h1>
+        <p>This is responsive website</p>
+    </header>
+    <nav>
+        <ul class="menu">
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+            <li><a href="#">Link 5</a></li>
+        </ul>
+    </nav>
+
+    <div class="row">
+        <section class="col-75">
+            <article class="card">
+                <h2 class="title">This is Title</h2>
+                <p class="info">Title description, Apr 9, 2022</p>
+
+                <div class="fake-img" style="padding: 8vh 0;">Image</div>
+
+                <p>Some text...</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                    Numquam iste aperiam repellendus porro perspiciatis. Repellendus iste numquam amet debitis est, 
+                    obcaecati adipisci cupiditate sint necessitatibus tempora. Animi illum quo numquam.</p>
+            </article>
+
+            <article class="card">
+                <h2 class="title">This is Anoter Title</h2>
+                <p class="info">Anoter title description, Apr 9, 2022</p>
+
+                <div class="fake-img" style="padding: 8vh 0;">Image</div>
+
+                <p>Some text...</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                    Numquam iste aperiam repellendus porro perspiciatis. Repellendus iste numquam amet debitis est, 
+                    obcaecati adipisci cupiditate sint necessitatibus tempora. Animi illum quo numquam.</p>
+            </article>
+            
+        </section>
+
+        <aside class="col-25">
+            <article class="card">
+                <h2 class="title">About Me</h2>
+
+                <div class="fake-img" style="padding: 4vh 0;">Image</div>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </article>
+
+            <article class="card">
+                <h2 class="title">Popular Post</h2>
+
+                <div class="fake-img" style="padding: 4vh 0; margin-top: 5px;">Image</div>
+                <div class="fake-img" style="padding: 4vh 0; margin-top: 5px;">Image</div>
+                <div class="fake-img" style="padding: 4vh 0; margin-top: 5px;">Image</div>
+            </article>
+
+            <article class="card">
+                <h2 class="title">Follow Me</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </article>
+        </aside>
+    </div>
+
+    <footer class="footer"></footer>
+</body>
+</html>
