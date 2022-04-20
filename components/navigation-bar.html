@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <style>
+        /* make layout row and col */
+        .row {
+            overflow: hidden;
+        }
+
+        .col {
+            float: left;
+            margin-right: 40px;
+        }
+
+        /* Style the first vertical nav */
+        .vertical-nav {
+            background: #f1f1f1;
+            padding: 0;
+            width: 20vw;
+            list-style: none;
+        }
+
+        .vertical-nav li>a {
+            display: block;
+            padding: 15px 8px;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .vertical-nav li>a:hover:not(.active) {
+            background: #555;
+            color: #fff;
+        }
+
+        .vertical-nav a.active {
+            background: #ff6347;
+            color: #fff;
+        }
+
+        /* Style the second vertical nav */
+        .vertical-nav-1 {
+            padding: 0;
+            width: 20vw;
+            list-style: none;
+        }
+
+        .vertical-nav-1 li>a {
+            display: block;
+            background: #f1f1f1;
+            color: #000;
+            padding: 15px 20px;
+            border-radius: 20px;
+            box-shadow: 0 2px 4px #555;
+            text-decoration: none;
+            margin-bottom: 10px;
+
+        }
+
+        .vertical-nav-1 li>a:hover:not(.active) {
+            background: #555;
+            color: #fff;
+            box-shadow: none;
+        }
+
+        .vertical-nav-1 a.active {
+            background: #ffa500;
+        }
+
+        /* Style the first horizontal bar */
+        .horizontal-nav {
+            background: #333;
+            list-style: none;
+            padding: 0;
+        }
+
+        .horizontal-nav>li {
+            display: inline-block;
+        }
+
+        .horizontal-nav>li>a {
+            display: block;
+            padding: 14px 16px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .horizontal-nav>li>a:hover {
+            background: #000;
+        }
+
+        /* Style the dropdown menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            display: none;
+            list-style: none;
+            padding: 0;
+            background: #f1f1f1;
+            box-shadow: 1px 1px 4px #aeaeae;
+        }
+
+        .dropdown-content>li>a {
+            display: block;
+            padding: 12px 24px;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .dropdown-content>li>a:hover {
+            background: #ddd;
+        }
+
+        /* Style the second horizontal bar */
+        .horizontal-nav-1 {
+            list-style: none;
+            overflow: hidden;
+            background: #f1f1f1;
+            padding: 0;
+        }
+
+        .horizontal-nav-1 li {
+            float: left;
+        }
+
+        .horizontal-nav-1 li:last-child {
+            float: right;
+        }
+
+        .horizontal-nav-1 li a {
+            text-decoration: none;
+            display: block;
+            padding: 14px 16px;
+            color: #000;
+        }
+
+        .horizontal-nav-1 li a.active {
+            background: #1e90ff;
+            color: #fff;
+        }
+
+        .horizontal-nav-1 li a:hover:not(.active) {
+            background: #ddd;
+        }
+
+        /* Style the sticky nav bar */ 
+
+        .sticky-nav {
+            position: -webkit-sticky; /* Safari */
+            position: sticky;
+            top: 0;
+            list-style: none;
+            overflow: hidden;
+            padding: 0;
+            background: #f1f1f1;
+            box-shadow: 0 1px 4px #aeaeae;
+        }
+
+        .sticky-nav li {
+            float: left;
+            border-right: 1px solid #aeaeae;
+        }
+
+        .sticky-nav li:last-child {
+            float: right;
+            border-right: 0 none;
+            border-left: 1px solid #aeaeae;
+        }
+
+        .sticky-nav li a {
+            text-decoration: none;
+            display: block;
+            padding: 14px 16px;
+            color: #000;
+        }
+
+        .sticky-nav li a.active {
+            background: #6a5acd;
+            color: #fff;
+        }
+
+        .sticky-nav li a:hover:not(.active) {
+            background: #ddd;
+        }
+
+        /* Make dummy text area's height to longer than a browser screen height to scroll the page */
+        .dummy-text {
+            width: 80vw;
+            margin: 40px auto;
+        }
+
+        .dummy-text div {
+            height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Vertical Navigation</h1>
+    <div class="row">
+        <div class="col">
+            <ul class="vertical-nav">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
+        
+        <div class="col">
+            <ul class="vertical-nav-1">
+                <li><a href="#">Home</a></li>
+                <li><a href="#" class="active">News</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <h1>Horizontal Navigation Bar and Dropdown menu</h1>
+    <ul class="horizontal-nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Contact</a></li>
+        <li class="dropdown">
+            <a href="#">Dropdown <svg xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+              </svg></a>
+            <ul class="dropdown-content">
+                <li><a href="#">List 1</a></li>
+                <li><a href="#">List 2</a></li>
+                <li><a href="#">List 3</a></li>
+            </ul>
+        </li>
+        <li><a href="#">About</a></li>
+    </ul>
+
+    <ul class="horizontal-nav-1">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+
+    <h2>Sticky Navigation Bar</h2>
+    <ul class="sticky-nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#" class="active">News</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+    <div class="dummy-text">
+        <h1>Dummy-Text</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, illum! Obcaecati corporis id voluptates consequuntur pariatur ratione dolorem incidunt.
+            Fuga unde sequi quae officiis officia exercitationem sed dolores provident explicabo! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, 
+            ipsa! Ipsum dolor tenetur quam, nostrum corrupti praesentium officiis, 
+            quibusdam voluptatum quisquam cupiditate natus ratione voluptatibus magnam labore ipsa obcaecati sapiente?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, illum! Obcaecati corporis id voluptates consequuntur pariatur ratione dolorem incidunt.
+            Fuga unde sequi quae officiis officia exercitationem sed dolores provident explicabo! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, 
+            ipsa! Ipsum dolor tenetur quam, nostrum corrupti praesentium officiis, 
+            quibusdam voluptatum quisquam cupiditate natus ratione voluptatibus magnam labore ipsa obcaecati sapiente?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, illum! Obcaecati corporis id voluptates consequuntur pariatur ratione dolorem incidunt.
+            Fuga unde sequi quae officiis officia exercitationem sed dolores provident explicabo! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, 
+            ipsa! Ipsum dolor tenetur quam, nostrum corrupti praesentium officiis, 
+            quibusdam voluptatum quisquam cupiditate natus ratione voluptatibus magnam labore ipsa obcaecati sapiente?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, illum! Obcaecati corporis id voluptates consequuntur pariatur ratione dolorem incidunt.
+            Fuga unde sequi quae officiis officia exercitationem sed dolores provident explicabo!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, illum! Obcaecati corporis id voluptates consequuntur pariatur ratione dolorem incidunt.
+            Fuga unde sequi quae officiis officia exercitationem sed dolores provident explicabo!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, illum! Obcaecati corporis id voluptates consequuntur pariatur ratione dolorem incidunt.
+            Fuga unde sequi quae officiis officia exercitationem sed dolores provident explicabo! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, 
+            ipsa! Ipsum dolor tenetur quam, nostrum corrupti praesentium officiis, 
+            quibusdam voluptatum quisquam cupiditate natus ratione voluptatibus magnam labore ipsa obcaecati sapiente?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, illum! Obcaecati corporis id voluptates consequuntur pariatur ratione dolorem incidunt.
+            Fuga unde sequi quae officiis officia exercitationem sed dolores provident explicabo! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, 
+            ipsa! Ipsum dolor tenetur quam, nostrum corrupti praesentium officiis, 
+            quibusdam voluptatum quisquam cupiditate natus ratione voluptatibus magnam labore ipsa obcaecati sapiente?</p>
+        <div></div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, illum! Obcaecati corporis id voluptates consequuntur pariatur ratione dolorem incidunt.
+            Fuga unde sequi quae officiis officia exercitationem sed dolores provident explicabo!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, illum! Obcaecati corporis id voluptates consequuntur pariatur ratione dolorem incidunt.
+            Fuga unde sequi quae officiis officia exercitationem sed dolores provident explicabo!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, illum! Obcaecati corporis id voluptates consequuntur pariatur ratione dolorem incidunt.
+            Fuga unde sequi quae officiis officia exercitationem sed dolores provident explicabo!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, illum! Obcaecati corporis id voluptates consequuntur pariatur ratione dolorem incidunt.
+            Fuga unde sequi quae officiis officia exercitationem sed dolores provident explicabo! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, 
+            ipsa! Ipsum dolor tenetur quam, nostrum corrupti praesentium officiis, 
+            quibusdam voluptatum quisquam cupiditate natus ratione voluptatibus magnam labore ipsa obcaecati sapiente?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, illum! Obcaecati corporis id voluptates consequuntur pariatur ratione dolorem incidunt.
+            Fuga unde sequi quae officiis officia exercitationem sed dolores provident explicabo! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, 
+            ipsa! Ipsum dolor tenetur quam, nostrum corrupti praesentium officiis, 
+            quibusdam voluptatum quisquam cupiditate natus ratione voluptatibus magnam labore ipsa obcaecati sapiente?</p>
+        <div></div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, illum! Obcaecati corporis id voluptates consequuntur pariatur ratione dolorem incidunt.
+            Fuga unde sequi quae officiis officia exercitationem sed dolores provident explicabo! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, 
+            ipsa! Ipsum dolor tenetur quam, nostrum corrupti praesentium officiis, 
+            quibusdam voluptatum quisquam cupiditate natus ratione voluptatibus magnam labore ipsa obcaecati sapiente?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, illum! Obcaecati corporis id voluptates consequuntur pariatur ratione dolorem incidunt.
+            Fuga unde sequi quae officiis officia exercitationem sed dolores provident explicabo! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, 
+            ipsa! Ipsum dolor tenetur quam, nostrum corrupti praesentium officiis, 
+            quibusdam voluptatum quisquam cupiditate natus ratione voluptatibus magnam labore ipsa obcaecati sapiente?</p>
+        <div></div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, illum! Obcaecati corporis id voluptates consequuntur pariatur ratione dolorem incidunt.
+            Fuga unde sequi quae officiis officia exercitationem sed dolores provident explicabo! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, 
+            ipsa! Ipsum dolor tenetur quam, nostrum corrupti praesentium officiis, 
+            quibusdam voluptatum quisquam cupiditate natus ratione voluptatibus magnam labore ipsa obcaecati sapiente?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, illum! Obcaecati corporis id voluptates consequuntur pariatur ratione dolorem incidunt.
+            Fuga unde sequi quae officiis officia exercitationem sed dolores provident explicabo! Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, 
+            ipsa! Ipsum dolor tenetur quam, nostrum corrupti praesentium officiis, 
+            quibusdam voluptatum quisquam cupiditate natus ratione voluptatibus magnam labore ipsa obcaecati sapiente?</p>
+    </div>
+</body>
+</html>
