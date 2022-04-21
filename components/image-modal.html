@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Modal</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Style every image in image gallary and make the image width into 100% of screen */
+        .img-container {
+            margin-top: 10px;
+        }
+
+        .img-container>img {
+            width: 100%;
+            height: auto;
+        }
+
+        .img-container>img:hover {
+            opacity: 0.7;
+        }
+
+        /* Image modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000000ee;
+        }
+
+        #modal-close {
+            position: fixed;
+            z-index: 2;
+            top: 30px;
+            right: 40px;
+            font-size: 40px;
+            font-weight: bold;
+            color: #f1f1f1;
+            transition: 0.3s;
+        }
+
+        #modal-close:hover {
+            color: #bbb;
+            cursor: pointer;
+        }
+
+        .modal-img-wrap {
+            position: relative;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #modal-img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        
+        #modal-img-desc {
+            text-align: center;
+            letter-spacing: 1px;
+            color: #fff;
+            margin-top: 40px;
+        }
+
+        #modal-img, #modal-img-desc {
+            animation: zoom 0.6s ease;
+        }
+
+        @keyframes zoom {
+            from { transform: scale(0.1); }
+            to { transform: scale(1); }
+        }
+
+        @media (min-width: 576px) {
+
+            /* Resize each image inside the image gallary into near half of display when the screen width is less than or equal to 576px */
+            .img-gallary {
+                overflow: hidden;
+            }
+
+            .img-container {
+                float: left;
+                width: 47%;
+                margin-left: 10px;
+            }
+
+            /* Resize the image of image modal into 80% of the screen width when screen width is less than or equal to 576px */
+
+            #modal-img {
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+        }
+
+        @media (min-width: 768px) {
+
+            /* Resize each image inside the image gallary into near one third of display when the screen width is less than or equal to 768px */
+            .img-container {
+                width: 31%;
+            }
+
+            /* Resize the image of image modal into 65% of the screen width when screen width is less than or equal to 768px */
+
+            #modal-img {
+                width: 65%;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+
+            /* Resize each image inside the image gallary into near one fourth of display when the screen width is less than or equal to 576px */
+            .img-container {
+                width: 24%;
+            }
+
+            /* Resize the image of image modal into 50% of the screen width when screen width is less than or equal to 1200px */
+
+            #modal-img {
+                width: 40%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Gallary</h1>
+    <p>This is responsive image gallary. You can click on a image to you want to see in large.</p>
+
+    <div class="img-gallary">
+        <div class="img-container">
+            <img src="../img/img-1.jpg" alt="Beautiful cliff, Thailand" width="600" height="400">
+        </div>
+        <div class="img-container">
+            <img src="../img/img-2.jpg" alt="A wonderful bridge, Amazon" width="600" height="400">
+        </div>
+        <div class="img-container">
+            <img src="../img/img-3.jpg" alt="Northern Lights, Norway" width="600" height="400">
+        </div>
+        <div class="img-container">
+            <img src="../img/img-4.jpg" alt="A river through near a mountain, England" width="600" height="400">
+        </div>
+    </div>
+
+    <!-- Image modal -->
+    <div class="modal">
+        <span id="modal-close">&times;</span>
+        <div class="modal-img-wrap">
+            <img src="../img/img-4.jpg" alt="Beautiful cliff, Thailand" id="modal-img">
+            <p id="modal-img-desc">Beautiful cliff, Thailand</p>
+        </div>
+    </div>
+    
+    <script>
+        // Select all images
+        var images = document.querySelectorAll('.img-container>img');
+
+        // Add click event listener into each image.
+        for(image of images) {
+            image.addEventListener('click', e => {
+                document.querySelector('#modal-img').src = image.src; // Copy source image src into image src of image modal
+                document.querySelector('#modal-img-desc').textContent = image.alt; // Copy description text from source image alt
+                document.querySelector('.modal').style.display = 'block'; // Finally, display the image modal.
+            });
+        }
+
+        // Add click event listener into close button to close the image modal
+        document.querySelector('#modal-close').addEventListener('click', e => {
+            document.querySelector('.modal').style.display = 'none';
+        })
+
+    </script>
+</body>
+</html>

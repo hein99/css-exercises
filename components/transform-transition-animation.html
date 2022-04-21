@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform, Transition, Animation</title>
+    <style>
+        .first {
+            width: 100px;
+            height: 100px;
+            background: aqua;
+            transition: width 2s ease, height 4s ease-in-out, transform 1s, margin 2s;
+        }
+
+        .first:hover {
+            width: 200px;
+            height: 400px;
+            transform: skew(20deg, 0);
+            margin-left: 5rem;
+        }
+
+        .second {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            animation: example 5s ease 2s infinite alternate;
+        }
+
+        @keyframes example {
+            0% {
+                background: red;
+                left: 0;
+                top: 0;
+            }
+
+            25% {
+                background: blue;
+                left: 200px;
+                top: 0;
+            }
+
+            50% {
+                background: yellow;
+                left: 200px;
+                top: 200px;
+            }
+
+            75% {
+                background: green;
+                left: 0;
+                top: 200px;
+            }
+
+            100% {
+                background: red;
+                left: 0;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Transform and Transition</h1>
+    <p>Hover over the box below.</p>
+    <div class="first"></div>
+
+    <h1>Animation</h1>
+    <div class="second"></div>
+    
+</body>
+</html>
