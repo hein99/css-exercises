@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types of Button</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .btn {
+            font-size: 16px;
+            border-radius: 4px;
+            padding: 16px 32px;
+            background: none;
+            color: #000;
+            cursor: pointer;
+            border: none;
+            margin: 0 5px;
+            transition: 0.4s;
+        }
+
+        .btn-outline-green {
+            border: 2px solid #4CAF50;
+        }
+
+        .btn-outline-green:hover {
+            background: #4CAF50;
+            color: #fff;
+        }
+
+        .btn-outline-blue {
+            border: 2px solid #4c5caf;
+        }
+
+        .btn-outline-blue:hover {
+            background: #4c5caf;
+            color: #fff;
+        }
+
+        .btn-outline-red {
+            border: 2px solid #e34848;
+        }
+
+        .btn-outline-red:hover {
+            background: #e34848;
+            color: #fff;
+        }
+
+        .btn-outline-grey {
+            border: 2px solid #808080;
+        }
+
+        .btn-outline-grey:hover {
+            background: #808080;
+            color: #fff;
+        }
+
+        .btn-outline-black {
+            border: 2px solid #000;
+        }
+
+        .btn-outline-black:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        .btn-green {
+            border: 2px solid #4CAF50;
+            background: #4CAF50;
+            color: #fff;
+        }
+
+        .btn-blue {
+            border: 2px solid #4c5caf;
+            background: #4c5caf;
+            color: #fff;
+        }
+
+        .btn-red {
+            border: 2px solid #e34848;
+            background: #e34848;
+            color: #fff;
+        }
+
+        .btn-grey {
+            border: 2px solid #808080;
+            background: #808080;
+            color: #fff;
+        }
+
+        .btn-black {
+            border: 2px solid #000;
+            background: #000;
+            color: #fff;
+        }
+        .btn-green:hover, .btn-blue:hover, .btn-red:hover, .btn-grey:hover, .btn-black:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .btn-group {
+            overflow: hidden;
+        }
+
+        .btn-group>button {
+            display: inline-block;
+            float: left;
+            padding: 16px 32px;
+            background: none;
+            border: 0 none;
+            border-top: 2px solid #555;
+            border-bottom: 2px solid #555;
+            border-left: 2px solid #555;
+            font-size: 16px;
+        }
+
+        .btn-group>button:first-child {
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+
+        .btn-group>button:last-child {
+            border-right: 2px solid #555;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .btn-group>button:hover {
+            background: #000;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Hoverable Buttons</h1>
+    <div>
+        <button class="btn btn-outline-green">Green</button>
+        <button class="btn btn-outline-blue">Blue</button>
+        <button class="btn btn-outline-red">Red</button>
+        <button class="btn btn-outline-grey">Grey</button>
+        <button class="btn btn-outline-black">Black</button>
+    </div>
+
+    <div style="margin-top: 5px;">
+        <button class="btn btn-green">Green</button>
+        <button class="btn btn-blue">Blue</button>
+        <button class="btn btn-red">Red</button>
+        <button class="btn btn-grey">Grey</button>
+        <button class="btn btn-black">Black</button>
+    </div>
+
+    <h1>Button Group</h1>
+    <div class="btn-group">
+        <button>First</button>
+        <button>Second</button>
+        <button>Third</button>
+        <button>Fourth</button>
+        <button>Firth</button>
+    </div>
+</body>
+</html>
