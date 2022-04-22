@@ -101,12 +101,14 @@
             color: #000;
         }
 
+        /* Design button group */
+
         .btn-group {
             overflow: hidden;
         }
 
         .btn-group>button {
-            display: inline-block;
+            display: block;
             float: left;
             padding: 16px 32px;
             background: none;
@@ -115,6 +117,7 @@
             border-bottom: 2px solid #555;
             border-left: 2px solid #555;
             font-size: 16px;
+            cursor: pointer;
         }
 
         .btn-group>button:first-child {
@@ -133,9 +136,120 @@
             color: #fff;
         }
 
+        /* an arrow appear when user hover over the button */
+        .btn-arrow {
+            display: inline-block;
+            border: none;
+            background: #f4511e;
+            text-align: center;
+            padding: 20px;
+            width: 200px;
+            color: #fff;
+            font-size: 32px;
+            cursor: pointer;
+        }
+
+        .btn-arrow>span {
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .btn-arrow>span::after {
+            content: '\00bb';
+            position: absolute;
+            top: 0;
+            right: -25px;
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        .btn-arrow:hover span {
+            padding-right: 25px;
+        }
+        
+        .btn-arrow:hover span::after {
+            right: 0;
+            opacity: 1;
+        }
+
+
+        /* Style the Pressed Button Effect */
+        .btn-pressed {
+            border: none;
+            padding: 24px 48px;
+            font-size: 24px;
+            border-radius: 40px;
+            background: #4ab3d3;
+            color: #fff;
+            box-shadow: 0 9px #808080;
+            cursor: pointer;
+        }
+
+        .btn-pressed:hover {
+            background: #368299;
+        }
+
+        .btn-pressed:active {
+            background: #368299;
+            transform: translateY(7px);
+            box-shadow: 0 2px #808080;
+        }
+
+        /* Style Ripple effect button */
+        .btn-ripple {
+            overflow: hidden;
+            position: relative;
+            border: none;
+            border-radius: 8px;
+            background:#f13a3a;
+            padding: 24px 48px;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .btn-ripple::after {
+            content: '';
+            background: #f1f1f1;
+            display: block;
+            position: absolute;
+            padding-top: 300%;
+            padding-left: 350%;
+            margin-left: -48px !important;
+            margin-top: -120%;
+            opacity: 0;
+            transition: all 0.8s;
+        }
+
+        .btn-ripple:active::after {
+            padding: 0;
+            margin: 0;
+            opacity: 1;
+            transition: 0s;
+        }
+
     </style>
 </head>
 <body>
+    <h1>Animated Buttons</h1>
+    <div style="display: flex; justify-content: space-around;">
+        <div>
+            <h2>Ripple effect on click</h2>
+            <button class="btn-ripple">Click</button>
+        </div>
+
+        <div>
+            <h2>Pressed effect on click</h2>
+            <button class="btn-pressed">Click</button>
+        </div>
+        
+        <div>
+            <h2>Pop up arrow effect</h2>
+            <button class="btn-arrow"><span>Hover</span></button>
+        </div>
+    </div>
+
     <h1>Hoverable Buttons</h1>
     <div>
         <button class="btn btn-outline-green">Green</button>
