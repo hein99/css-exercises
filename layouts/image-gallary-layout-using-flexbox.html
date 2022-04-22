@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallary</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Style header */
+        .header {
+            padding: 2rem 0;
+        }
+
+        .header>h1 {
+            text-align: center;
+            margin: 0;
+        }
+
+        .header>p {
+            text-align: center;
+            margin: 0;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .col {
+            flex: 100%;
+            max-width: 100%;
+            padding: 0 4px;
+        }
+
+        .col>img {
+            width: 100%;
+            height: auto;
+        }
+
+        @media screen and (min-width: 768px) {
+            .col {
+                flex: 50%;
+                max-width: 50%;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            .col {
+                flex: 25%;
+                max-width: 25%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Image Gallary</h1>
+        <p>This is responsive layout. You can resize the browser to see the responsive effect.</p>
+    </header>
+
+    <div class="row">
+        <div class="col">
+            <img src="../img/img-1.jpg" alt="Beautiful cliff, Italy">
+            <img src="../img/img-2.jpg" alt="Bridge in the forest, Amazon">
+            <img src="../img/img-7.jpg" alt="Awesome beach with rock, Thailand">
+            <img src="../img/img-8.jpg" alt="A bird in a colorful garden, Japan">
+            <img src="../img/img-6.jpg" alt="Icy island, Ireland">
+        </div>
+
+        <div class="col">
+            <img src="../img/img-8.jpg" alt="Beautiful cliff, Italy">
+            <img src="../img/img-9.jpg" alt="A stanning beach with a sharp cliff, England">
+            <img src="../img/img-4.jpg" alt="A river through the mountain, Maxico">
+            <img src="../img/img-3.jpg" alt="Northern Light, Norway">
+            <img src="../img/img-10.jpg" alt="A white bird in a field, Germany">
+        </div>
+
+        <div class="col">
+            <img src="../img/img-1.jpg" alt="Beautiful cliff, Italy">
+            <img src="../img/img-2.jpg" alt="Bridge in the forest, Amazon">
+            <img src="../img/img-7.jpg" alt="Awesome beach with rock, Thailand">
+            <img src="../img/img-8.jpg" alt="A bird in a colorful garden, Japan">
+            <img src="../img/img-6.jpg" alt="Icy island, Ireland">
+        </div>
+
+        <div class="col">
+            <img src="../img/img-8.jpg" alt="Beautiful cliff, Italy">
+            <img src="../img/img-9.jpg" alt="A stanning beach with a sharp cliff, England">
+            <img src="../img/img-4.jpg" alt="A river through the mountain, Maxico">
+            <img src="../img/img-3.jpg" alt="Northern Light, Norway">
+            <img src="../img/img-10.jpg" alt="A white bird in a field, Germany">
+        </div>
+    </div>
+
+</body>
+</html>
