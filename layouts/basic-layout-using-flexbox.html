@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Layout Using Flexbox</title>
+    <style>
+        /* 
+        | This Layout orientation is mobile first and responsive design for three screen size such as x-small(None, <576px), medium(md, >=768px) and Extra large(xl, >=1200px)
+        |
+        */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background: #f1f1f1;
+            margin: 0;
+        }
+
+        .container, .container-md, .container-xl { width: 100%; margin: 0 auto;}
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .col-1 { width: 8.33%; }
+        .col-2 { width: 16.66%; }
+        .col-3 { width: 24.99%; }
+        .col-4 { width: 33.32%; }
+        .col-5 { width: 41.65%; }
+        .col-6 { width: 49.98%; }
+        .col-7 { width: 58.31%; }
+        .col-8 { width: 66.64%; }
+        .col-9 { width: 74.97%; }
+        .col-10 { width: 83.3%; }
+        .col-11 { width: 91.63%; }
+        .col-12 { width: 99.96%; }
+
+        /* Style header */
+        .header {
+            padding: 2rem 0;
+        }
+
+        .header>h1 {
+            margin: 0 0 1rem;
+            text-align: center;
+        }
+
+        .header>p {
+            margin: 0;
+            text-align: center;
+        }
+
+        /* Style navigation menu bar */
+        .nav>ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background: #333;
+        }
+
+        .nav>ul>li {
+            border: 1px solid #9a9a9a;
+        }
+
+        .nav>ul>li>a {
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            padding: 16px 32px;
+        }
+
+        /* Style Card */
+        .card {
+            background: #fff;
+            margin-top: 0.725rem;
+            padding: 20px;
+        }
+
+        .card .title {
+            text-transform: uppercase;
+        }
+
+        .card .info {
+            font-weight: bold;
+            font-size: 0.725rem;
+            letter-spacing: 1px;
+        }
+
+        .card .fake-img {
+            background: #666;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .footer {
+            background: #c9c9c9;
+            padding: 5vh 0;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        @media screen and (min-width: 768px) {
+            .container, .container-md { width: 720px; }
+            .col-md-1 { width: 8.33%; }
+            .col-md-2 { width: 16.66%; }
+            .col-md-3 { width: 24.99%; }
+            .col-md-4 { width: 33.32%; }
+            .col-md-5 { width: 41.65%; }
+            .col-md-6 { width: 49.98%; }
+            .col-md-7 { width: 58.31%; }
+            .col-md-8 { width: 66.64%; }
+            .col-md-9 { width: 74.97%; }
+            .col-md-10 { width: 83.3%; }
+            .col-md-11 { width: 91.63%; }
+            .col-md-12 { width: 99.96%; }
+
+            .nav>ul>li {
+                border: 0 none;
+                border-right: 1px solid #9a9a9a;
+            }
+
+            .nav>ul>li:last-child {
+                margin-left: auto;
+                border-right: 0;
+                border-left: 1px solid #9a9a9a;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            .container, .container-md, .container-xl { width: 80vw; }
+            .col-xl-1 { width: 8.33%; }
+            .col-xl-2 { width: 16.66%; }
+            .col-xl-3 { width: 24.99%; }
+            .col-xl-4 { width: 33.32%; }
+            .col-xl-5 { width: 41.65%; }
+            .col-xl-6 { width: 49.98%; }
+            .col-xl-7 { width: 58.31%; }
+            .col-xl-8 { width: 66.64%; }
+            .col-xl-9 { width: 74.97%; }
+            .col-xl-10 { width: 83.3%; }
+            .col-xl-11 { width: 91.63%; }
+            .col-xl-12 { width: 99.96%; }
+
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>My Website</h1>
+        <p>This is responsive website created with a flexbox</p>
+    </header>
+
+    <nav class="nav">
+        <ul class="row">
+            <li class="col-6 col-md-2 col-xl-1"><a href="#">Link 1</a></li>
+            <li class="col-6 col-md-2 col-xl-1"><a href="#">Link 2</a></li>
+            <li class="col-6 col-md-2 col-xl-1"><a href="#">Link 3</a></li>
+            <li class="col-6 col-md-2 col-xl-1"><a href="#">Link 4</a></li>
+            <li class="col-6 col-md-2 col-xl-1"><a href="#">Link 5</a></li>
+        </ul>
+    </nav>
+
+    <div class="container-xl">
+        <main class="row">
+            <section class="col-12 col-md-9" style="padding: 0 5px;">
+                <article class="card">
+                    <h2 class="title">This is Title</h2>
+                    <p class="info">Title description, Apr 9, 2022</p>
+    
+                    <div class="fake-img" style="padding: 8vh 0;">Image</div>
+    
+                    <p>Some text...</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                        Numquam iste aperiam repellendus porro perspiciatis. Repellendus iste numquam amet debitis est, 
+                        obcaecati adipisci cupiditate sint necessitatibus tempora. Animi illum quo numquam.</p>
+                </article>
+
+                <article class="card">
+                    <h2 class="title">This is Anoter Title</h2>
+                    <p class="info">Anoter title description, Apr 9, 2022</p>
+    
+                    <div class="fake-img" style="padding: 8vh 0;">Image</div>
+    
+                    <p>Some text...</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                        Numquam iste aperiam repellendus porro perspiciatis. Repellendus iste numquam amet debitis est, 
+                        obcaecati adipisci cupiditate sint necessitatibus tempora. Animi illum quo numquam.</p>
+                </article>
+            </section>
+
+            <aside class="col-12 col-md-3" style="padding: 0 5px;">
+                <article class="card">
+                    <h2 class="title">About Me</h2>
+    
+                    <div class="fake-img" style="padding: 4vh 0;">Image</div>
+    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </article>
+    
+                <article class="card">
+                    <h2 class="title">Popular Post</h2>
+    
+                    <div class="fake-img" style="padding: 4vh 0; margin-top: 5px;">Image</div>
+                    <div class="fake-img" style="padding: 4vh 0; margin-top: 5px;">Image</div>
+                    <div class="fake-img" style="padding: 4vh 0; margin-top: 5px;">Image</div>
+                </article>
+    
+                <article class="card">
+                    <h2 class="title">Follow Me</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </article>
+            </aside>
+        </main>
+    </div>
+
+    <footer class="footer">Footer</footer>
+</body>
+</html>
